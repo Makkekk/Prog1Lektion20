@@ -8,8 +8,9 @@ public class SwimmerApp {
 
 
     public static void main(String[] args) {
-        TrainingPlan trainingPlanA = new TrainingPlan('B',10,6);
         TrainingPlan trainingPlanB = new TrainingPlan('A',16,10);
+        TrainingPlan trainingPlanA = new TrainingPlan('B',10,6);
+
 
         ArrayList<Double> lapTimes = new ArrayList<>();
         lapTimes.add(1.02);
@@ -46,9 +47,15 @@ public class SwimmerApp {
         swimmers.add(swimmer2);
         swimmers.add(swimmer3);
 
+
+int totalTraininghours = 0;
         for (Swimmer swimmer : swimmers) {
+            int swimmerTrainingHours = swimmer.allTrainingHours();
             System.out.println(swimmer.getName() + "'s bedste tid: " + swimmer.bestLapTime());
+            System.out.println(swimmer.getName() + "'s totale træningstimer per uge: " + swimmer.allTrainingHours());
+            totalTraininghours += swimmerTrainingHours;
         }
+        System.out.println("Totale traingstimer per uge for alle svømmere: " + totalTraininghours);
 
 
 

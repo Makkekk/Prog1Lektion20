@@ -1,6 +1,6 @@
-package opgave01.model;
+package Opgave02.model.model;
 
-import java.util.*;
+import java.util.ArrayList;
 
 /**
  * Modeling a Swimmer
@@ -10,19 +10,18 @@ public class Swimmer {
     private String club;
     private int yearGroup;
     private ArrayList<Double> lapTimes;
-    private TrainingPlan trainingPlan;
 
 
     /**
      * Initialize a new swimmer with name, club, yearGroup, and lap times.
      */
 
-    public Swimmer(String name, int yearGroup, ArrayList<Double> lapTimes, String club, TrainingPlan trainingPlan) {
+    public Swimmer(String name, int yearGroup, ArrayList<Double> lapTimes, String club) {
         this.name = name;
         this.yearGroup = yearGroup;
         this.lapTimes = lapTimes;
         this.club = club;
-        this.trainingPlan = trainingPlan;
+
 
     }
 
@@ -56,13 +55,6 @@ public class Swimmer {
         this.club = club;
     }
 
-    public void setTrainingPlan(TrainingPlan trainingPlan) {
-        this.trainingPlan = trainingPlan;
-    }
-
-    public TrainingPlan getTrainingPlan() {
-        return trainingPlan;
-    }
 
     /**
      * Return the fastest lap time
@@ -78,12 +70,6 @@ public class Swimmer {
         return best;
     }
 
-    public int allTrainingHours() {
-        if (this.trainingPlan != null) {
-            return this.trainingPlan.getWeeklyWaterHours() + this.trainingPlan.getWeeklyStrengthHours();
-        } else {
-            return 0;
-        }
-    }
 }
+
 
