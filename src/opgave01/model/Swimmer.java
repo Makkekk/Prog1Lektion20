@@ -10,17 +10,20 @@ public class Swimmer {
     private String club;
     private int yearGroup;
     private ArrayList<Double> lapTimes;
-    
+
+
     /**
      * Initialize a new swimmer with name, club, yearGroup, and lap times.
-     */ 
+     */
 
-   public Swimmer(String name, int yearGroup, ArrayList<Double> lapTimes, String club) {
-       this.name = name;
-       this.yearGroup = yearGroup;
-       this.lapTimes = lapTimes;
-       this.club = club;
-   }
+    public Swimmer(String name, int yearGroup, ArrayList<Double> lapTimes, String club, TrainingPlan trainingPlan) {
+        this.name = name;
+        this.yearGroup = yearGroup;
+        this.lapTimes = lapTimes;
+        this.club = club;
+
+    }
+
     /**
      * Return the name of the swimmer
      */
@@ -44,22 +47,29 @@ public class Swimmer {
 
     /**
      * Register the club of the swimmer
+     *
      * @param club
      */
     public void setClub(String club) {
         this.club = club;
     }
-    
+
     /**
      * Return the fastest lap time
      */
     public double bestLapTime() {
         double best = Double.MAX_VALUE;
-        for (double time: lapTimes) {
-        	if(best > time) {
-        		best = time;
-        	}
+        for (double time : lapTimes) {
+            if (best > time) {
+                best = time;
+            }
         }
         return best;
     }
+
+    public int allTrainingHours() {
+
+        return 0;
+    }
+
 }
